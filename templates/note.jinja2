@@ -1,0 +1,10 @@
+{% extends "base.jinja2" %}
+
+{% block title %}
+    Note #{{ note['id'] }}
+{% endblock %}
+
+{% block content %}
+    <h1>{{ note['title'] }}</h1>
+    <span>{{ note['body'] }}</span>
+{% endblock %}

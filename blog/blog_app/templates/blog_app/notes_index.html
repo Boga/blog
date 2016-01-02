@@ -6,12 +6,12 @@
             {% for note in notes %}
                 <li class="media">
                     <div class="media-left">
-                        <a href="{% url 'blog_app:note_details' note.id %}">
+                        <a href="{% url 'blog_app:note_details' note.url %}">
                             <img class="media-object" src="http://placehold.it/50x50" alt="{{ note.title }}">
                         </a>
                     </div>
                     <div class="media-body">
-                        <a href="{% url 'blog_app:note_details' note.id %}">
+                        <a href="{% url 'blog_app:note_details' note.url %}">
                             <h4 class="media-heading">{{ note.title }}</h4>
                         </a>
                     </div>

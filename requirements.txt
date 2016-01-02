@@ -1,4 +1,7 @@
 Django==1.9
+Unidecode==0.4.18
 argparse==1.2.1
+awesome-slugify==1.6.5
 django-taggit==0.17.6
+regex==2015.11.22
 wsgiref==0.1.2

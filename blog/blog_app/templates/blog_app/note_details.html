@@ -1,0 +1,14 @@
+{% extends "blog_app/base.html" %}
+
+{% block content %}
+
+<h3>{{ note.title }}</h3>
+<span>{{ note.body }}</span>
+{{ note.pub_date }}
+
+{% for tag in note.tags.all %}
+    <a href="{{ tag.slug }}">{{ tag.name }}</a>
+{% endfor %}
+
+
+{% endblock %}

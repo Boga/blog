@@ -1,0 +1,24 @@
+{% extends "blog_app/base.html" %}
+
+{% block content %}
+    {% if notes %}
+        <ul class="media-list">
+            {% for note in notes %}
+                <li class="media">
+                    <div class="media-left">
+                        <a href="{% url 'blog_app:note_details' note.id %}">
+                            <img class="media-object" src="http://placehold.it/50x50" alt="{{ note.title }}">
+                        </a>
+                    </div>
+                    <div class="media-body">
+                        <a href="{% url 'blog_app:note_details' note.id %}">
+                            <h4 class="media-heading">{{ note.title }}</h4>
+                        </a>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No notes are available.</p>
+    {% endif %}
+{% endblock %}

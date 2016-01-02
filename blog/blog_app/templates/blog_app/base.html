@@ -1,0 +1,41 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'blog_app/node_modules/bootstrap/dist/css/bootstrap.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'blog_app/node_modules/font-awesome/css/font-awesome.css' %}" />
+    <link rel="stylesheet" type="text/css" href="
+    {% static 'blog_app/css/style.css' %}" />
+    <title>{% block title %}Hello to my blog{% endblock %}</title>
+</head>
+
+<body>
+
+{% include 'blog_app/navbar.html' %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-10">
+            <div id="content">
+                {% block content %}{% endblock %}
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div id="sidebar">
+                {% block sidebar %}
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="{% url 'admin:index' %}">Admin zone</a></li>
+                    </ul>
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="{% static 'blog_app/node_modules/jquery/dist/jquery.js' %}"></script>
+<script src="{% static 'blog_app/node_modules/bootstrap/dist/js/bootstrap.js' %}"></script>
+
+</body>
+</html>

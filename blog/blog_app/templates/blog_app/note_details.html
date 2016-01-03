@@ -3,7 +3,7 @@
 {% block content %}
 
 <h3>{{ note.title }}</h3>
-<span>{{ note.body }}</span>
+<span>{{ note.body_html | safe }}</span>
 {{ note.pub_date }}
 
 {% for tag in note.tags.all %}

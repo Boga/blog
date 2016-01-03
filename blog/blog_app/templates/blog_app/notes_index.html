@@ -1,24 +1,47 @@
 {% extends "blog_app/base.html" %}
 
 {% block content %}
-    {% if notes %}
-        <ul class="media-list">
-            {% for note in notes %}
-                <li class="media">
-                    <div class="media-left">
-                        <a href="{% url 'blog_app:note_details' note.url %}">
-                            <img class="media-object" src="http://placehold.it/50x50" alt="{{ note.title }}">
-                        </a>
-                    </div>
-                    <div class="media-body">
-                        <a href="{% url 'blog_app:note_details' note.url %}">
-                            <h4 class="media-heading">{{ note.title }}</h4>
-                        </a>
-                    </div>
-                </li>
-            {% endfor %}
-        </ul>
-    {% else %}
-        <p>No notes are available.</p>
-    {% endif %}
+{#        <ul class="media-list">#}
+{#            {% for note in notes %}#}
+{#                <li class="media">#}
+{#                    <div class="media-left">#}
+{#                        <a href="{% url 'blog_app:note_details' note.url %}">#}
+{#                            <img class="media-object" src="http://placehold.it/50x50" alt="{{ note.title }}">#}
+{#                        </a>#}
+{#                    </div>#}
+{#                    <div class="media-body">#}
+{#                        <a href="{% url 'blog_app:note_details' note.url %}">#}
+{#                            <h4 class="media-heading">{{ note.title }}</h4>#}
+{#                        </a>#}
+{#                        <p class="text-justify">#}
+{#                            {{ note.body }}#}
+{#                        </p>#}
+{#                    </div>#}
+{#                </li>#}
+{#            {% endfor %}#}
+{#        </ul> #}
+
+    {% for note in notes %}
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <a href="{% url 'blog_app:note_details' note.url %}">
+                    <span class="panel-title">
+                        {{ note.title }}
+                    </span>
+                </a>
+            </div>
+            <div class="panel-body">
+                {{ note.body }}
+            </div>
+            <div class="panel-footer">
+                {{ note.pub_date | date:"Y.m.d H:i:s" }}
+                <span class="pull-right">
+                    {% for tag in note.tags.all %}
+                        <a href="{{ tag.slug }}">{{ tag.name }}</a>
+                    {% endfor %}
+                </span>
+            </div>
+        </div>
+
+    {% endfor %}
 {% endblock %}

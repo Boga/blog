@@ -3,3 +3,4 @@ blog/blog_app/static/blog_app/node_modules
 blog/db
 *.pyc
 blog/blog/settings/__init__.py
+blog/upload

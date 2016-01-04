@@ -1,10 +1,15 @@
 {% extends "blog_app/base.html" %}
+{% load static %}
 
 {% block content %}
 
 <h3>{{ note.title }}</h3>
 <span>{{ note.body_html | safe }}</span>
 {{ note.pub_date }}
+
+{% if note.image %}
+    <img src="{{ note.image.url }}" alt="">
+{% endif %}
 
 {% for tag in note.tags.all %}
     <a href="{{ tag.slug }}">{{ tag.name }}</a>

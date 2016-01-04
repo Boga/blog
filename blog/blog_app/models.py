@@ -14,6 +14,7 @@ class Note(models.Model):
     pub_date = models.DateTimeField('date published', default=timezone.now)
     tags = TaggableManager(blank=True)
     url = models.CharField(max_length=2000, default=None, blank=True)
+    image = models.ImageField(blank=True)
 
     def save(self, *args, **kwargs):
         if not self.id:

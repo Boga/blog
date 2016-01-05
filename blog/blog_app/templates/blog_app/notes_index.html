@@ -1,26 +1,6 @@
 {% extends "blog_app/base.html" %}
 
 {% block content %}
-{#        <ul class="media-list">#}
-{#            {% for note in notes %}#}
-{#                <li class="media">#}
-{#                    <div class="media-left">#}
-{#                        <a href="{% url 'blog_app:note_details' note.url %}">#}
-{#                            <img class="media-object" src="http://placehold.it/50x50" alt="{{ note.title }}">#}
-{#                        </a>#}
-{#                    </div>#}
-{#                    <div class="media-body">#}
-{#                        <a href="{% url 'blog_app:note_details' note.url %}">#}
-{#                            <h4 class="media-heading">{{ note.title }}</h4>#}
-{#                        </a>#}
-{#                        <p class="text-justify">#}
-{#                            {{ note.body }}#}
-{#                        </p>#}
-{#                    </div>#}
-{#                </li>#}
-{#            {% endfor %}#}
-{#        </ul> #}
-
     {% for note in notes %}
         <div class="panel panel-default">
             <div class="panel-heading">
@@ -42,6 +22,5 @@
                 </span>
             </div>
         </div>
-
     {% endfor %}
 {% endblock %}

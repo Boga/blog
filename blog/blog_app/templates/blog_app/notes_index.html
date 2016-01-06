@@ -1,6 +1,11 @@
 {% extends "blog_app/base.html" %}
 
 {% block content %}
+    {% if tag %}
+        <h2>
+            Tag: {{ tag.name }}
+        </h2>
+    {% endif %}
     {% for note in notes %}
         <div class="panel panel-default">
             <div class="panel-heading">
@@ -17,7 +22,8 @@
                 {{ note.pub_date | date:"Y.m.d H:i:s" }}
                 <span class="pull-right">
                     {% for tag in note.tags.all %}
-                        <a href="{{ tag.slug }}">{{ tag.name }}</a>
+                        <a href={% url 'blog_app:tag_notes' tag.slug %}
+                        >{{ tag.name }}</a>
                     {% endfor %}
                 </span>
             </div>

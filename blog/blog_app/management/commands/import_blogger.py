@@ -39,10 +39,14 @@ class Command(BaseCommand):
                         note = Note(title=post['title'], pub_date=post[
                             'published'], body_html=post['content'])
                         note.save()
-                        for tag in post['labels']:
-                            note.tags.add(tag)
+                        if 'labels' in post:
+                            for tag in post['labels']:
+                                note.tags.add(tag)
                         print(note.title)
-                    request = posts.list_next(request, posts_doc)
+                request = posts.list_next(request, posts_doc)
+                # posts_doc = request.execute()
+                # request = posts.list_next(request, posts_doc)
+                # print(request)
 
         except client.AccessTokenRefreshError:
             print('The credentials have been revoked or expired, please re-run'

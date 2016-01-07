@@ -23,7 +23,7 @@ class Note(models.Model):
     def save(self, *args, **kwargs):
         if not self.id:
             self.url = slugify(self.title)
-        # self.body_html = markdown(self.body)
+        self.body_html = markdown(self.body)
         super(Note, self).save(*args, **kwargs)
 
     def __str__(self):

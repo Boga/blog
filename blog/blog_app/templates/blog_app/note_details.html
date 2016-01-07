@@ -12,7 +12,7 @@
 {% endif %}
 
 {% for tag in note.tags.all %}
-    <a href="{{ tag.slug }}">{{ tag.name }}</a>
+    <a href="{% url 'blog_app:tag_notes' tag.slug %}">{{ tag.name }}</a>
 {% endfor %}
 
 {% include 'blog_app/note_comments.html' %}

@@ -16,4 +16,7 @@ urlpatterns = [
         TemplateView.as_view(template_name="blog_app/resume.html")),
     url(r'^projects/', TemplateView.as_view(
             template_name="blog_app/projects.html")),
+
+    url(r'^import', views.import_view, name='import'),
+
 ]

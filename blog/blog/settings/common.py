@@ -17,7 +17,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(
 TOP_DIR = os.path.dirname(BASE_DIR)
 
 ALLOWED_HOSTS = [
-    'dev.miju.me',
+    'miju.me',
 ]
 
 # DEBUG = True

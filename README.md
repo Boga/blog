@@ -5,12 +5,12 @@ System-wide requirements:
 +   libjpeg-dev
 
 You might also be interested in installation of some database-specific 
-packages (i.e. `psycopg2 postgresql-server-dev-9.3` for PostgreSQL). 
+packages (i.e. `python2.7-psycopg2 postgresql-server-dev-9.3` for PostgreSQL). 
 
 Python requirements are listed in requirements.txt
 
-You have to create blog/blog/settings/__init__.py and point there what 
-configuration file you want to you use. Also, you can override some settings 
+You have to create blog/blog/settings/__init__.py and point there  
+configuration file you want to use. Also, you can override some settings 
 (i.e. SECRET_KEY):
 
     #!/usr/bin/env python

@@ -4,6 +4,9 @@ System-wide requirements:
 +   python-virtualenv
 +   libjpeg-dev
 
+You might also be interested in installation of some database-specific 
+packages (i.e. `psycopg2 postgresql-server-dev-9.3` for PostgreSQL). 
+
 Python requirements are listed in requirements.txt
 
 You have to create blog/blog/settings/__init__.py and point there what 

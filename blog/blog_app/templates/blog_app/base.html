@@ -3,10 +3,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" type="text/css" href="{% static 'blog_app/node_modules/bootstrap/dist/css/bootstrap.css' %}" />
-    <link rel="stylesheet" type="text/css" href="{% static 'blog_app/node_modules/font-awesome/css/font-awesome.css' %}" />
+    <link rel="stylesheet" type="text/css"
+          href="{% static 'blog_app/node_modules/bootstrap/dist/css/bootstrap.css' %}"/>
+    <link rel="stylesheet" type="text/css"
+          href="{% static 'blog_app/node_modules/font-awesome/css/font-awesome.css' %}"/>
     <link rel="stylesheet" type="text/css" href="
-    {% static 'blog_app/css/style.css' %}" />
+          {% static 'blog_app/css/style.css' %}"/>
     <title>{% block title %}Hello to my blog{% endblock %}</title>
 </head>
 
@@ -35,10 +37,8 @@
                            id="menu-resume">Resume</a>
                     </div>
                     <script>
-                        window.onload = function () {
-                            var element = '{% block menu-item %}main{% endblock %}';
-                            document.getElementById('menu-' + element).classList.add('active');
-                        };
+                        var element = '{% block menu-item %}main{% endblock %}';
+                        document.getElementById('menu-' + element).classList.add('active');
                     </script>
                 {% endblock %}
             </div>

@@ -11,7 +11,4 @@ https://docs.djangoproject.com/en/1.9/ref/settings/
 """
 from .common import *
 
-DEBUG = True
-INSTALLED_APPS += [
-    'django.contrib.staticfiles',
-]
+DEBUG = False

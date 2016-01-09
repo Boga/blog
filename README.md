@@ -9,7 +9,7 @@ packages (i.e. `python2.7-psycopg2 postgresql-server-dev-9.3` for PostgreSQL).
 
 Python requirements are listed in requirements.txt
 
-You have to create blog/blog/settings/__init__.py and point there  
+You have to create ```blog/blog/settings/__init__.py``` and point there  
 configuration file you want to use. Also, you can override some settings 
 (i.e. SECRET_KEY):
 
